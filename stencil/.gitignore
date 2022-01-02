@@ -1,6 +1,6 @@
 dist/
 www/
-
+.history
 *~
 *.sw[mnpcod]
 *.log
