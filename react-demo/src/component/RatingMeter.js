@@ -4,6 +4,7 @@ import smilySVG from '../assets/smily.svg'
 import grinHearts from '../assets/grin-hearts.svg'
 
 export default class RatingMeter extends React.Component {
+  liRating = null
   componentDidMount() {
     const smileBeam = window.FontAwesome.icon({
       prefix: 'fas',
@@ -14,6 +15,10 @@ export default class RatingMeter extends React.Component {
     setTimeout(() => {
       liRatings.setSvgString(svgHtml)
     }, 1000)
+    this.liRating.addEventListener('input', (e) => {
+      console.log(e.detail)
+      console.log(e.target.value)
+    })
   }
 
   render() {
@@ -30,6 +35,9 @@ export default class RatingMeter extends React.Component {
                 <div className='width-height-one'>
                   <li-rating
                     font-size='45'
+                    ref={(liRating) => {
+                      this.liRating = liRating
+                    }}
                     total-icons='3'
                     stroke-color='#FF66E5'
                     stroke-width='1'

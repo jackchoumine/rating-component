@@ -273,7 +273,7 @@ export class LiRating {
   changeRating(e) {
     this.value = this.calculateCurrentRating(e).toString();
     // console.log('VALUE =>', this.value);
-    this.input.emit(this.value);
+    this.input.emit(+this.value);
   }
 
   // This methos calculates the current rating value.
